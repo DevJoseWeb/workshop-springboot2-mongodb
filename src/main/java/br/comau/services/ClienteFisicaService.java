@@ -54,6 +54,4 @@ public class ClienteFisicaService {
     public ClienteFisica fromDTO(ClienteFisicaDTO objDto) {
         return new ClienteFisica(objDto.getId(), objDto.getNome(), objDto.getCpf(), objDto.getTipo());
     }
-
-
 }
