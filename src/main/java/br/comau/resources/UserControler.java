@@ -28,7 +28,9 @@ public class UserControler {
 	@RequestMapping(method=RequestMethod.GET)
  	public ResponseEntity<List<UserDTO>> findAll() {
 		List<User> list = service.findAll();
-		List<UserDTO> listDto = list.stream().map(x -> new UserDTO(x)).collect(Collectors.toList());
+		List<UserDTO> listDto = list.parallelStream()
+				.map(UserDTO::new)
+				.collect(Collectors.toList());
 		return ResponseEntity.ok().body(listDto);
 	}
 
