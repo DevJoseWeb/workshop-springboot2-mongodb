@@ -4,6 +4,8 @@ import br.comau.domain.ClienteFisica;
 import br.comau.dto.ClienteFisicaDTO;
 import br.comau.repository.ClienteFisicaRepository;
 import br.comau.services.exception.ObjectNotFoundException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +20,8 @@ import java.util.Optional;
 @Service
 public class ClienteFisicaService {
 
+    private static final Logger LOG = LoggerFactory.getLogger(ClienteFisicaService.class);
+
     @Autowired
     private ClienteFisicaRepository clienteFisicaRepository;
 
@@ -27,6 +31,7 @@ public class ClienteFisicaService {
 
     public ClienteFisica findById(String id) {
         Optional<ClienteFisica> obj = clienteFisicaRepository.findById(id);
+        LOG.info("Objeto não encontrado");
         return obj.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado"));
     }
 
@@ -36,6 +41,7 @@ public class ClienteFisicaService {
 
     public void delete(String id) {
         findById(id);
+        LOG.info("Deletado Cliente Fisica");
         clienteFisicaRepository.deleteById(id);
     }
 
