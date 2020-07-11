@@ -4,6 +4,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  * @author Jose R F Junior
@@ -16,133 +17,127 @@ public class ClienteJuridica implements Serializable {
 
     @Id
     private String id;
-    public  String fantasia;
+    public  String razaoSocial;
+    public  String nomeFantasia;
     public  String cnpj;
     public  String tipo;
-
-    public ClienteJuridica(String id, String fantasia, String cnpj, String tipo) {
-        this.id = id;
-        this.fantasia = fantasia;
-        this.cnpj = cnpj;
-        this.tipo = tipo;
-    }
+    public  String telefone;
+    public  String email;
+    public  String obs;
+    public  String status;
 
     public ClienteJuridica() {
     }
 
-    public static ClienteJuridicaBuilder builder() {
-        return new ClienteJuridicaBuilder();
+    public ClienteJuridica(String id, String razaoSocial,
+                           String nomeFantasia, String cnpj, String tipo,
+                           String telefone, String email, String obs, String status
+    ) {
+        this.id = id;
+        this.razaoSocial = razaoSocial;
+        this.nomeFantasia = nomeFantasia;
+        this.cnpj = cnpj;
+        this.tipo = tipo;
+        this.telefone = telefone;
+        this.email = email;
+        this.obs = obs;
+        this.status = status;
     }
 
-    public boolean equals(final Object o) {
-        if (o == this) return true;
-        if (!(o instanceof ClienteJuridica)) return false;
-        final ClienteJuridica other = (ClienteJuridica) o;
-        if (!other.canEqual((Object) this)) return false;
-        final Object this$id = this.getId();
-        final Object other$id = other.getId();
-        if (this$id == null ? other$id != null : !this$id.equals(other$id)) return false;
-        final Object this$fantasia = this.getFantasia();
-        final Object other$fantasia = other.getFantasia();
-        if (this$fantasia == null ? other$fantasia != null : !this$fantasia.equals(other$fantasia)) return false;
-        final Object this$cnpj = this.getCnpj();
-        final Object other$cnpj = other.getCnpj();
-        if (this$cnpj == null ? other$cnpj != null : !this$cnpj.equals(other$cnpj)) return false;
-        final Object this$tipo = this.getTipo();
-        final Object other$tipo = other.getTipo();
-        if (this$tipo == null ? other$tipo != null : !this$tipo.equals(other$tipo)) return false;
-        return true;
-    }
-
-    protected boolean canEqual(final Object other) {
-        return other instanceof ClienteJuridica;
-    }
-
-    public int hashCode() {
-        final int PRIME = 59;
-        int result = 1;
-        final Object $id = this.getId();
-        result = result * PRIME + ($id == null ? 43 : $id.hashCode());
-        final Object $fantasia = this.getFantasia();
-        result = result * PRIME + ($fantasia == null ? 43 : $fantasia.hashCode());
-        final Object $cnpj = this.getCnpj();
-        result = result * PRIME + ($cnpj == null ? 43 : $cnpj.hashCode());
-        final Object $tipo = this.getTipo();
-        result = result * PRIME + ($tipo == null ? 43 : $tipo.hashCode());
-        return result;
-    }
-
-    public String toString() {
-        return "ClienteJuridica(id=" + this.getId() + ", fantasia=" + this.getFantasia() + ", cnpj=" + this.getCnpj() + ", tipo=" + this.getTipo() + ")";
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
     }
 
     public String getId() {
-        return this.id;
-    }
-
-    public String getFantasia() {
-        return this.fantasia;
-    }
-
-    public String getCnpj() {
-        return this.cnpj;
-    }
-
-    public String getTipo() {
-        return this.tipo;
+        return id;
     }
 
     public void setId(String id) {
         this.id = id;
     }
 
-    public void setFantasia(String fantasia) {
-        this.fantasia = fantasia;
+    public String getRazaoSocial() {
+        return razaoSocial;
+    }
+
+    public void setRazaoSocial(String razaoSocial) {
+        this.razaoSocial = razaoSocial;
+    }
+
+    public String getNomeFantasia() {
+        return nomeFantasia;
+    }
+
+    public void setNomeFantasia(String nomeFantasia) {
+        this.nomeFantasia = nomeFantasia;
+    }
+
+    public String getCnpj() {
+        return cnpj;
     }
 
     public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
     }
 
+    public String getTipo() {
+        return tipo;
+    }
+
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
 
-    public static class ClienteJuridicaBuilder {
-        private String id;
-        private String fantasia;
-        private String cnpj;
-        private String tipo;
+    public String getTelefone() {
+        return telefone;
+    }
 
-        ClienteJuridicaBuilder() {
-        }
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
 
-        public ClienteJuridica.ClienteJuridicaBuilder id(String id) {
-            this.id = id;
-            return this;
-        }
+    public String getEmail() {
+        return email;
+    }
 
-        public ClienteJuridica.ClienteJuridicaBuilder fantasia(String fantasia) {
-            this.fantasia = fantasia;
-            return this;
-        }
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-        public ClienteJuridica.ClienteJuridicaBuilder cnpj(String cnpj) {
-            this.cnpj = cnpj;
-            return this;
-        }
+    public String getObs() {
+        return obs;
+    }
 
-        public ClienteJuridica.ClienteJuridicaBuilder tipo(String tipo) {
-            this.tipo = tipo;
-            return this;
-        }
+    public void setObs(String obs) {
+        this.obs = obs;
+    }
 
-        public ClienteJuridica build() {
-            return new ClienteJuridica(id, fantasia, cnpj, tipo);
-        }
+    public String getStatus() {
+        return status;
+    }
 
-        public String toString() {
-            return "ClienteJuridica.ClienteJuridicaBuilder(id=" + this.id + ", fantasia=" + this.fantasia + ", cnpj=" + this.cnpj + ", tipo=" + this.tipo + ")";
-        }
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof ClienteJuridica)) return false;
+        ClienteJuridica that = (ClienteJuridica) o;
+        return getId().equals(that.getId()) &&
+                getRazaoSocial().equals(that.getRazaoSocial()) &&
+                getNomeFantasia().equals(that.getNomeFantasia()) &&
+                getCnpj().equals(that.getCnpj()) &&
+                getTipo().equals(that.getTipo()) &&
+                getTelefone().equals(that.getTelefone()) &&
+                getEmail().equals(that.getEmail()) &&
+                getObs().equals(that.getObs()) &&
+                getStatus().equals(that.getStatus());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getRazaoSocial(), getNomeFantasia(), getCnpj(), getTipo(), getTelefone(), getEmail(), getObs(), getStatus());
     }
 }

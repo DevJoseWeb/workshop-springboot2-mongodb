@@ -22,11 +22,12 @@ public class ClienteFisica implements Serializable {
     public  String endereco;
     public  String telefone;
     public  String email;
+    public  String status;
 
     public ClienteFisica() {
 
     }
-    public ClienteFisica(String id, String nome, String cpf, String tipo, String endereco, String telefone, String email) {
+    public ClienteFisica(String id, String nome, String cpf, String tipo, String endereco, String telefone, String email, String status) {
         this.id = id;
         this.nome = nome;
         this.cpf = cpf;
@@ -34,6 +35,8 @@ public class ClienteFisica implements Serializable {
         this.endereco = endereco;
         this.telefone = telefone;
         this.email = email;
+        this.status = status;
+
     }
 
     public static long getSerialVersionUID() {
@@ -72,5 +75,35 @@ public class ClienteFisica implements Serializable {
         this.tipo = tipo;
     }
 
+    public String getEndereco() {
+        return endereco;
+    }
 
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 }
