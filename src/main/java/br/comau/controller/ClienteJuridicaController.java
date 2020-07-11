@@ -1,4 +1,4 @@
-package br.comau.resources;
+package br.comau.controller;
 
 public class ClienteJuridicaController {
 }

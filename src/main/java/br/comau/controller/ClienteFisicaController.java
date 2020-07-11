@@ -1,9 +1,10 @@
-package br.comau.resources;
+package br.comau.controller;
 
 import br.comau.domain.ClienteFisica;
 import br.comau.dto.ClienteFisicaDTO;
 import br.comau.services.ClienteFisicaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -52,5 +53,15 @@ public class ClienteFisicaController {
         clienteFisicaService.delete(id);
         return ResponseEntity.noContent().build();
     }
+
+ /*   @RequestMapping(value="/lista/paginada", method=RequestMethod.GET)
+    public ResponseEntity<Page<ClienteFisica>> findPage(
+            @RequestParam(value="page", defaultValue="0") Integer page,
+            @RequestParam(value="linesPerPage", defaultValue="24") Integer linesPerPage,
+            @RequestParam(value="orderBy", defaultValue="nome") String orderBy,
+            @RequestParam(value="direction", defaultValue="DESC") String direction) {
+        Page<ClienteFisica> list = clienteFisicaService.findPage(page, linesPerPage, orderBy, direction);
+        return ResponseEntity.ok().body(list);
+    }*/
 
 }

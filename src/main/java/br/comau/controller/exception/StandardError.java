@@ -1,4 +1,4 @@
-package br.comau.resources.exception;
+package br.comau.controller.exception;
 
 import java.io.Serializable;
 

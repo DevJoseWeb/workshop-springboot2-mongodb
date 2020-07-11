@@ -1,4 +1,4 @@
-package br.comau.resources.exception;
+package br.comau.controller.exception;
 
 import br.comau.services.exception.ObjectNotFoundException;
 import org.springframework.http.HttpStatus;

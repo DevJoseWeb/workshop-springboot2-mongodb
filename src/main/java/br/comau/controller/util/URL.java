@@ -1,4 +1,4 @@
-package br.comau.resources.util;
+package br.comau.controller.util;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;

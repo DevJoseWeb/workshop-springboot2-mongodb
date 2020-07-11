@@ -7,10 +7,19 @@ import br.comau.services.exception.ObjectNotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort.Direction;
+import org.springframework.stereotype.Service;
+
 
 /**
  * @author Jose R F Junior
@@ -24,6 +33,9 @@ public class ClienteFisicaService {
 
     @Autowired
     private ClienteFisicaRepository clienteFisicaRepository;
+
+    @Autowired
+    private ClienteFisicaService clienteFisicaService;
 
     public List<ClienteFisica> findAll() {
         return clienteFisicaRepository.findAll();
@@ -44,6 +56,11 @@ public class ClienteFisicaService {
         LOG.info("Deletado Cliente Fisica");
         clienteFisicaRepository.deleteById(id);
     }
+
+   /* public Page<ClienteFisica> findPage(Integer page, Integer linesPerPage, String orderBy, String direction) {
+           PageRequest pageRequest = PageRequest.of(page, linesPerPage, Direction.valueOf(direction), orderBy);
+           return clienteFisicaRepository.findByClienteFisica(pageRequest);
+    }*/
 
     public ClienteFisica update(ClienteFisica obj) {
         ClienteFisica newObj = findById(obj.getId());
