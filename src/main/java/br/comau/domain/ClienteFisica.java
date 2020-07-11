@@ -23,11 +23,14 @@ public class ClienteFisica implements Serializable {
     public  String telefone;
     public  String email;
     public  String status;
-
+    public  String empresa;
     public ClienteFisica() {
 
     }
-    public ClienteFisica(String id, String nome, String cpf, String tipo, String endereco, String telefone, String email, String status) {
+    public ClienteFisica(String id, String nome, String cpf,
+                         String tipo, String endereco, String telefone,
+                         String email, String status, String empresa
+    ) {
         this.id = id;
         this.nome = nome;
         this.cpf = cpf;
@@ -36,6 +39,7 @@ public class ClienteFisica implements Serializable {
         this.telefone = telefone;
         this.email = email;
         this.status = status;
+        this.empresa = empresa;
 
     }
 
@@ -106,4 +110,14 @@ public class ClienteFisica implements Serializable {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    public String getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(String empresa) {
+        this.empresa = empresa;
+    }
+
+
 }

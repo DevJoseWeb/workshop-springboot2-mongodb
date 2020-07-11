@@ -11,7 +11,7 @@ import java.util.Objects;
  * web2ajax@gmail.com
  * Santiago Chile 08/07/2020
  */
-@Document(collection = "clientefisica")
+@Document(collection = "clientejuridica")
 public class ClienteJuridica implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -21,6 +21,7 @@ public class ClienteJuridica implements Serializable {
     public  String nomeFantasia;
     public  String cnpj;
     public  String tipo;
+    public  String endereco;
     public  String telefone;
     public  String email;
     public  String obs;
@@ -31,13 +32,15 @@ public class ClienteJuridica implements Serializable {
 
     public ClienteJuridica(String id, String razaoSocial,
                            String nomeFantasia, String cnpj, String tipo,
-                           String telefone, String email, String obs, String status
+                           String telefone, String email, String obs, String status,
+                           String endereco
     ) {
         this.id = id;
         this.razaoSocial = razaoSocial;
         this.nomeFantasia = nomeFantasia;
         this.cnpj = cnpj;
         this.tipo = tipo;
+        this.endereco = endereco;
         this.telefone = telefone;
         this.email = email;
         this.obs = obs;
@@ -120,24 +123,11 @@ public class ClienteJuridica implements Serializable {
         this.status = status;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof ClienteJuridica)) return false;
-        ClienteJuridica that = (ClienteJuridica) o;
-        return getId().equals(that.getId()) &&
-                getRazaoSocial().equals(that.getRazaoSocial()) &&
-                getNomeFantasia().equals(that.getNomeFantasia()) &&
-                getCnpj().equals(that.getCnpj()) &&
-                getTipo().equals(that.getTipo()) &&
-                getTelefone().equals(that.getTelefone()) &&
-                getEmail().equals(that.getEmail()) &&
-                getObs().equals(that.getObs()) &&
-                getStatus().equals(that.getStatus());
+    public String getEndereco() {
+        return endereco;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(getId(), getRazaoSocial(), getNomeFantasia(), getCnpj(), getTipo(), getTelefone(), getEmail(), getObs(), getStatus());
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
     }
 }
