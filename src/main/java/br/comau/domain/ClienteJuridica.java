@@ -26,6 +26,7 @@ public class ClienteJuridica implements Serializable {
     public  String email;
     public  String obs;
     public  String status;
+    public  String logo;
 
     public ClienteJuridica() {
     }
@@ -33,7 +34,7 @@ public class ClienteJuridica implements Serializable {
     public ClienteJuridica(String id, String razaoSocial,
                            String nomeFantasia, String cnpj, String tipo,
                            String telefone, String email, String obs, String status,
-                           String endereco
+                           String endereco, String logo
     ) {
         this.id = id;
         this.razaoSocial = razaoSocial;
@@ -45,6 +46,7 @@ public class ClienteJuridica implements Serializable {
         this.email = email;
         this.obs = obs;
         this.status = status;
+        this.logo = logo;
     }
 
     public static long getSerialVersionUID() {
@@ -129,5 +131,13 @@ public class ClienteJuridica implements Serializable {
 
     public void setEndereco(String endereco) {
         this.endereco = endereco;
+    }
+
+    public String getLogo() {
+        return logo;
+    }
+
+    public void setLogo(String logo) {
+        this.logo = logo;
     }
 }

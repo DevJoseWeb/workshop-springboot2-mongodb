@@ -49,9 +49,26 @@ public class ClienteFisicaService {
         newObj.setNome(obj.getNome());
         newObj.setCpf(obj.getCpf());
         newObj.setTipo(obj.getTipo());
+        newObj.setTipo(obj.getEndereco());
+        newObj.setTipo(obj.getTelefone());
+        newObj.setTipo(obj.getEmail());
+        newObj.setTipo(obj.getStatus());
+        newObj.setTipo(obj.getEmpresa());
+        newObj.setTipo(obj.getVistoDataVencimento());
     }
 
     public ClienteFisica fromDTO(ClienteFisicaDTO objDto) {
-        return new ClienteFisica(objDto.getId(), objDto.getNome(), objDto.getCpf(), objDto.getTipo());
+        return new ClienteFisica(
+                objDto.getId(),
+                objDto.getNome(),
+                objDto.getCpf(),
+                objDto.getTipo(),
+                objDto.getEndereco(),
+                objDto.getTelefone(),
+                objDto.getEmail(),
+                objDto.getStatus(),
+                objDto.getEmpresa(),
+                objDto.getVistoDataVencimento()
+        );
     }
 }

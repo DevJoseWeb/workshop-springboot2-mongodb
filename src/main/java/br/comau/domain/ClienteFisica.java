@@ -24,7 +24,8 @@ public class ClienteFisica implements Serializable {
     public  String email;
     public  String status;
     public  String empresa;
-    public  String vistoDataVencimento;
+    public  String vistoDataVencimento; //Locale brasil = new Locale("pt", "BR");
+
     public ClienteFisica() {
 
     }
