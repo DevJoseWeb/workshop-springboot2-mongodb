@@ -1,7 +1,6 @@
 package br.comau.dto;
 
 import br.comau.domain.ClienteFisica;
-import lombok.*;
 
 import java.io.Serializable;
 

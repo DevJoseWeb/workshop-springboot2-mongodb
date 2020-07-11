@@ -1,18 +1,17 @@
 package br.comau.resources;
 
 
-import java.net.URI;
-import java.util.List;
-import java.util.stream.Collectors;
-
+import br.comau.domain.ClienteFisica;
+import br.comau.dto.ClienteFisicaDTO;
+import br.comau.services.ClienteFisicaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import br.comau.domain.ClienteFisica;
-import br.comau.dto.ClienteFisicaDTO;
-import br.comau.services.ClienteFisicaService;
+import java.net.URI;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @CrossOrigin(origins = "*")
 @RestController

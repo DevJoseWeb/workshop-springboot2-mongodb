@@ -1,6 +1,5 @@
 package br.comau.domain;
 
-import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -20,15 +19,21 @@ public class ClienteFisica implements Serializable {
     public  String nome;
     public  String cpf;
     public  String tipo;
+    public  String endereco;
+    public  String telefone;
+    public  String email;
 
     public ClienteFisica() {
 
     }
-    public ClienteFisica(String id, String nome, String cpf, String tipo) {
+    public ClienteFisica(String id, String nome, String cpf, String tipo, String endereco, String telefone, String email) {
         this.id = id;
         this.nome = nome;
         this.cpf = cpf;
         this.tipo = tipo;
+        this.endereco = endereco;
+        this.telefone = telefone;
+        this.email = email;
     }
 
     public static long getSerialVersionUID() {
@@ -66,4 +71,6 @@ public class ClienteFisica implements Serializable {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
+
+
 }
