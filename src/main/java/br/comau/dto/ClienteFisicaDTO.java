@@ -4,6 +4,7 @@ import br.comau.domain.ClienteFisica;
 import org.springframework.data.annotation.Id;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * @author Jose R F Junior
@@ -12,7 +13,6 @@ import java.io.Serializable;
  */
 public class ClienteFisicaDTO implements Serializable {
     private static final long serialVersionUID = 1L;
-
 
     @Id
     private String id;
@@ -24,7 +24,8 @@ public class ClienteFisicaDTO implements Serializable {
     public  String email;
     public  String status;
     public  String empresa;
-    public  String vistoDataVencimento;
+    //public  Date   vistoDataVencimento;
+    public  String   vistoDataVencimento;
 
     public ClienteFisicaDTO(){
     }
@@ -118,6 +119,14 @@ public class ClienteFisicaDTO implements Serializable {
     public void setEmpresa(String empresa) {
         this.empresa = empresa;
     }
+
+   /* public Date getVistoDataVencimento() {
+        return vistoDataVencimento;
+    }
+
+    public void setVistoDataVencimento(Date vistoDataVencimento) {
+        this.vistoDataVencimento = vistoDataVencimento;
+    }*/
 
     public String getVistoDataVencimento() {
         return vistoDataVencimento;

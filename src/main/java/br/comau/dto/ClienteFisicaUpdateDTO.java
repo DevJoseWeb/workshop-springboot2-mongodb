@@ -1,8 +1,10 @@
 package br.comau.dto;
 
 import br.comau.domain.ClienteFisica;
+import org.springframework.data.annotation.Id;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * @author Jose R F Junior
@@ -13,99 +15,125 @@ public
 class ClienteFisicaUpdateDTO implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    public  String id;
+    @Id
+    private String id;
     public  String nome;
     public  String cpf;
     public  String tipo;
+    public  String endereco;
+    public  String telefone;
+    public  String email;
+    public  String status;
+    public  String empresa;
+    //public Date vistoDataVencimento;
+    public String vistoDataVencimento;
 
-    ClienteFisicaUpdateDTO(ClienteFisica ObjclienteFisica){
+    public ClienteFisicaUpdateDTO(){
+    }
+    public ClienteFisicaUpdateDTO(ClienteFisica ObjclienteFisica){
+
         id = ObjclienteFisica.getId();
         nome = ObjclienteFisica.getNome();
         cpf = ObjclienteFisica.getCpf();
         tipo = ObjclienteFisica.getTipo();
+        endereco = ObjclienteFisica.getEndereco();
+        telefone = ObjclienteFisica.getTelefone();
+        email = ObjclienteFisica.getEmail();
+        status = ObjclienteFisica.getStatus();
+        empresa = ObjclienteFisica.getEmpresa();
+        vistoDataVencimento = ObjclienteFisica.getVistoDataVencimento();
+
     }
 
-    public ClienteFisicaUpdateDTO(String id, String nome, String cpf, String tipo) {
-        this.id = id;
-        this.nome = nome;
-        this.cpf = cpf;
-        this.tipo = tipo;
-    }
-
-    public ClienteFisicaUpdateDTO() {
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
     }
 
     public String getId() {
-        return this.id;
-    }
-
-    public String getNome() {
-        return this.nome;
-    }
-
-    public String getCpf() {
-        return this.cpf;
-    }
-
-    public String getTipo() {
-        return this.tipo;
+        return id;
     }
 
     public void setId(String id) {
         this.id = id;
     }
 
+    public String getNome() {
+        return nome;
+    }
+
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public String getCpf() {
+        return cpf;
     }
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
+    public String getTipo() {
+        return tipo;
+    }
+
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
 
-    public boolean equals(final Object o) {
-        if (o == this) return true;
-        if (!(o instanceof ClienteFisicaUpdateDTO)) return false;
-        final ClienteFisicaUpdateDTO other = (ClienteFisicaUpdateDTO) o;
-        if (!other.canEqual((Object) this)) return false;
-        final Object this$id = this.getId();
-        final Object other$id = other.getId();
-        if (this$id == null ? other$id != null : !this$id.equals(other$id)) return false;
-        final Object this$nome = this.getNome();
-        final Object other$nome = other.getNome();
-        if (this$nome == null ? other$nome != null : !this$nome.equals(other$nome)) return false;
-        final Object this$cpf = this.getCpf();
-        final Object other$cpf = other.getCpf();
-        if (this$cpf == null ? other$cpf != null : !this$cpf.equals(other$cpf)) return false;
-        final Object this$tipo = this.getTipo();
-        final Object other$tipo = other.getTipo();
-        if (this$tipo == null ? other$tipo != null : !this$tipo.equals(other$tipo)) return false;
-        return true;
+    public String getEndereco() {
+        return endereco;
     }
 
-    protected boolean canEqual(final Object other) {
-        return other instanceof ClienteFisicaUpdateDTO;
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
     }
 
-    public int hashCode() {
-        final int PRIME = 59;
-        int result = 1;
-        final Object $id = this.getId();
-        result = result * PRIME + ($id == null ? 43 : $id.hashCode());
-        final Object $nome = this.getNome();
-        result = result * PRIME + ($nome == null ? 43 : $nome.hashCode());
-        final Object $cpf = this.getCpf();
-        result = result * PRIME + ($cpf == null ? 43 : $cpf.hashCode());
-        final Object $tipo = this.getTipo();
-        result = result * PRIME + ($tipo == null ? 43 : $tipo.hashCode());
-        return result;
+    public String getTelefone() {
+        return telefone;
     }
 
-    public String toString() {
-        return "ClienteFisicaUpdateDTO(nome=" + this.getNome() + ", cpf=" + this.getCpf() + ", tipo=" + this.getTipo() + ")";
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(String empresa) {
+        this.empresa = empresa;
+    }
+
+   /* public Date getVistoDataVencimento() {
+        return vistoDataVencimento;
+    }
+
+    public void setVistoDataVencimento(Date vistoDataVencimento) {
+        this.vistoDataVencimento = vistoDataVencimento;
+    }*/
+
+    public String getVistoDataVencimento() {
+        return vistoDataVencimento;
+    }
+
+    public void setVistoDataVencimento(String vistoDataVencimento) {
+        this.vistoDataVencimento = vistoDataVencimento;
     }
 }

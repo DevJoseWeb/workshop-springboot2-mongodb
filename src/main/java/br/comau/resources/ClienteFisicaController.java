@@ -1,6 +1,5 @@
 package br.comau.resources;
 
-
 import br.comau.domain.ClienteFisica;
 import br.comau.dto.ClienteFisicaDTO;
 import br.comau.services.ClienteFisicaService;

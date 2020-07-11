@@ -49,12 +49,12 @@ public class ClienteFisicaService {
         newObj.setNome(obj.getNome());
         newObj.setCpf(obj.getCpf());
         newObj.setTipo(obj.getTipo());
-        newObj.setTipo(obj.getEndereco());
-        newObj.setTipo(obj.getTelefone());
-        newObj.setTipo(obj.getEmail());
-        newObj.setTipo(obj.getStatus());
-        newObj.setTipo(obj.getEmpresa());
-        newObj.setTipo(obj.getVistoDataVencimento());
+        newObj.setEndereco(obj.getEndereco());
+        newObj.setTelefone(obj.getTelefone());
+        newObj.setEmail(obj.getEmail());
+        newObj.setStatus(obj.getStatus());
+        newObj.setEmpresa(obj.getEmpresa());
+        newObj.setVistoDataVencimento(obj.getVistoDataVencimento());
     }
 
     public ClienteFisica fromDTO(ClienteFisicaDTO objDto) {

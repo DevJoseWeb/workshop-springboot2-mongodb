@@ -1,9 +1,14 @@
 package br.comau.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.io.Serializable;
+import java.text.NumberFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 /**
  * @author Jose R F Junior
@@ -24,7 +29,10 @@ public class ClienteFisica implements Serializable {
     public  String email;
     public  String status;
     public  String empresa;
-    public  String vistoDataVencimento; //Locale brasil = new Locale("pt", "BR");
+
+    // @JsonFormat(pattern="dd/MM/yyyy HH:mm")
+    //public  Date vistoDataVencimento; //Locale brasil = new Locale("pt", "BR");
+    public  String vistoDataVencimento;
 
     public ClienteFisica() {
 
@@ -123,6 +131,14 @@ public class ClienteFisica implements Serializable {
         this.empresa = empresa;
     }
 
+    /*public Date getVistoDataVencimento() {
+        return vistoDataVencimento;
+    }
+
+    public void setVistoDataVencimento(Date vistoDataVencimento) {
+        this.vistoDataVencimento = vistoDataVencimento;
+    }*/
+
     public String getVistoDataVencimento() {
         return vistoDataVencimento;
     }
@@ -130,4 +146,23 @@ public class ClienteFisica implements Serializable {
     public void setVistoDataVencimento(String vistoDataVencimento) {
         this.vistoDataVencimento = vistoDataVencimento;
     }
+
+    @Override
+    public String toString() {
+
+        NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("pt", "BR"));
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        StringBuilder builder = new StringBuilder();
+
+        builder.append("Código: ");
+        builder.append(getId());
+
+        //builder.append(", Data: ");
+        //builder.append(sdf.format(getVistoDataVencimento()));
+
+        builder.append(", Cliente: ");
+        builder.append(getNome());
+
+        return builder.toString();
+}
 }
