@@ -24,12 +24,14 @@ public class ClienteFisica implements Serializable {
     public  String email;
     public  String status;
     public  String empresa;
+    public  String vistoDataVencimento;
     public ClienteFisica() {
 
     }
     public ClienteFisica(String id, String nome, String cpf,
                          String tipo, String endereco, String telefone,
-                         String email, String status, String empresa
+                         String email, String status, String empresa,
+                         String vistoDataVencimento
     ) {
         this.id = id;
         this.nome = nome;
@@ -40,6 +42,7 @@ public class ClienteFisica implements Serializable {
         this.email = email;
         this.status = status;
         this.empresa = empresa;
+        this.vistoDataVencimento = vistoDataVencimento;
 
     }
 
@@ -119,5 +122,11 @@ public class ClienteFisica implements Serializable {
         this.empresa = empresa;
     }
 
+    public String getVistoDataVencimento() {
+        return vistoDataVencimento;
+    }
 
+    public void setVistoDataVencimento(String vistoDataVencimento) {
+        this.vistoDataVencimento = vistoDataVencimento;
+    }
 }
