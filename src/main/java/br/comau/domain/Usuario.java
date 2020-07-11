@@ -20,18 +20,20 @@ public class Usuario implements Serializable {
     private String senha;
     private String perfil;
     private String pessoaFisica;
-    private String PessoaJuridica;
+    private String pessoaJuridica;
+    private String Status;
 
     public Usuario() {
     }
 
-    public Usuario(String id, String login, String senha, String perfil, String pessoaFisica, String pessoaJuridica) {
+    public Usuario(String id, String login, String senha, String perfil, String pessoaFisica, String pessoaJuridica, String status) {
         this.id = id;
         this.login = login;
         this.senha = senha;
         this.perfil = perfil;
         this.pessoaFisica = pessoaFisica;
-        PessoaJuridica = pessoaJuridica;
+        this.pessoaJuridica = pessoaJuridica;
+        Status = status;
     }
 
     public static long getSerialVersionUID() {
@@ -79,12 +81,18 @@ public class Usuario implements Serializable {
     }
 
     public String getPessoaJuridica() {
-        return PessoaJuridica;
+        return pessoaJuridica;
     }
 
     public void setPessoaJuridica(String pessoaJuridica) {
-        PessoaJuridica = pessoaJuridica;
+        this.pessoaJuridica = pessoaJuridica;
     }
 
+    public String getStatus() {
+        return Status;
+    }
 
+    public void setStatus(String status) {
+        Status = status;
+    }
 }
