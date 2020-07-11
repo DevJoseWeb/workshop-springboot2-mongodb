@@ -1,0 +1,9 @@
+  spring
+    data
+    mongodb
+  authentication-database: comau
+  username:
+  password:
+  database: comau
+  port: 27017
+  host: localhost
