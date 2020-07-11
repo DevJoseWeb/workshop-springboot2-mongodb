@@ -9,6 +9,8 @@ import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * @author Jose R F Junior
@@ -29,19 +31,25 @@ public class ClienteFisica implements Serializable {
     public  String email;
     public  String status;
     public  String empresa;
+    //public  String perfil; quando for fazer o login vai ter que relacionar
 
     // @JsonFormat(pattern="dd/MM/yyyy HH:mm")
     //public  Date vistoDataVencimento; //Locale brasil = new Locale("pt", "BR");
     public  String vistoDataVencimento;
 
     public ClienteFisica() {
-
     }
+
+    /*public ClienteFisica() {
+        addPerfil(Perfil.CLIENTE);
+    }*/
+
     public ClienteFisica(String id, String nome, String cpf,
                          String tipo, String endereco, String telefone,
                          String email, String status, String empresa,
                          String vistoDataVencimento
     ) {
+        super();
         this.id = id;
         this.nome = nome;
         this.cpf = cpf;
@@ -52,12 +60,17 @@ public class ClienteFisica implements Serializable {
         this.status = status;
         this.empresa = empresa;
         this.vistoDataVencimento = vistoDataVencimento;
+        //addPerfil(Perfil.CLIENTE);
 
     }
 
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
+    /*public Set<Perfil> getPerfis() {
+        return perfis.stream().map(x -> Perfil.toEnum(x)).collect(Collectors.toSet());
     }
+
+    public void addPerfil(Perfil perfil) {
+        perfis.add(perfil.getCod());
+    }*/
 
     public String getId() {
         return id;
