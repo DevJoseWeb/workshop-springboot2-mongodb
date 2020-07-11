@@ -14,13 +14,14 @@ import java.util.stream.Collectors;
 
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping(value = "/api")
+@RequestMapping(value = "/api/v1")
 public class ClienteFisicaController {
 
     @Autowired
     private ClienteFisicaService clienteFisicaService;
 
-    @RequestMapping(method=RequestMethod.GET)
+    @RequestMapping(value = "/lista/todos", method= RequestMethod.GET)
+    @ResponseBody
     public ResponseEntity<List<ClienteFisicaDTO>> findAll() {
         List<ClienteFisica> list = clienteFisicaService.findAll();
         List<ClienteFisicaDTO> listDto = list.parallelStream()
@@ -29,13 +30,15 @@ public class ClienteFisicaController {
         return ResponseEntity.ok().body(listDto);
     }
 
-    @RequestMapping(value="/{id}", method=RequestMethod.GET)
+    @RequestMapping(value="/lista/{id}", params = "id", method=RequestMethod.GET)
+    @ResponseBody
     public ResponseEntity<ClienteFisicaDTO> findById(@PathVariable String id) {
         ClienteFisica obj = clienteFisicaService.findById(id);
         return ResponseEntity.ok().body(new ClienteFisicaDTO(obj));
     }
 
-    @RequestMapping(method=RequestMethod.POST)
+    @RequestMapping(value="/inserir/{id}", params = "id", method=RequestMethod.POST)
+    @ResponseBody
     public ResponseEntity<Void> insert(@RequestBody ClienteFisicaDTO objDto) {
         ClienteFisica obj = clienteFisicaService.fromDTO(objDto);
         obj = clienteFisicaService.insert(obj);
@@ -43,7 +46,8 @@ public class ClienteFisicaController {
         return ResponseEntity.created(uri).build();
     }
 
-    @RequestMapping(value="/{id}", method=RequestMethod.DELETE)
+    @RequestMapping(value="/inserir/{id}", params = "id", method=RequestMethod.DELETE)
+    @ResponseBody
     public ResponseEntity<Void> delete(@PathVariable String id) {
         clienteFisicaService.delete(id);
         return ResponseEntity.noContent().build();
